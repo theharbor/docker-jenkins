@@ -11,5 +11,5 @@ rm /jenkins-ci.org.key
 echo 'deb http://pkg.jenkins-ci.org/debian binary/' > /etc/apt/sources.list.d/jenkins-ci.list
 apt-get update
 
-aptinstall jenkins
+aptinstall jenkins git bzr subversion mercurial
 rm -rf /var/lib/apt/lists/*
