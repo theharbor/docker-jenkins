@@ -12,4 +12,6 @@ echo 'deb http://pkg.jenkins-ci.org/debian binary/' > /etc/apt/sources.list.d/je
 apt-get update
 
 aptinstall jenkins git bzr subversion mercurial
+
+echo '    StrictHostKeyChecking no' >> /etc/ssh/ssh_config
 rm -rf /var/lib/apt/lists/*
