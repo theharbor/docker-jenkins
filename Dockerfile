@@ -1,4 +1,4 @@
-FROM harbor/base
+FROM harbor/base:supervisor
 MAINTAINER Nick Groenen
 
 ENV JENKINS_HOME /var/lib/jenkins
