@@ -1,4 +1,6 @@
-FROM harbor/base:supervisor
+# Jenkins won't start with java8 right now. :/
+#FROM zoni/ubuntu:java8-runtime
+FROM zoni/ubuntu:latest
 MAINTAINER Nick Groenen
 
 ENV JENKINS_HOME /var/lib/jenkins
@@ -9,5 +11,8 @@ COPY jenkins-ci.org.key /jenkins-ci.org.key
 COPY conf/supervisor/jenkins.conf /etc/supervisor/conf.d/jenkins.conf
 COPY bin/build.sh /build.sh
 RUN /build.sh && rm /build.sh
+
+ADD bin/run.sh /
+ENTRYPOINT ["/run.sh"]
 
 EXPOSE 8080
