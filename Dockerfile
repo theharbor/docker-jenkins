@@ -12,6 +12,6 @@ COPY bin/build.sh /build.sh
 RUN /build.sh && rm /build.sh
 
 ADD bin/run.sh /
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["/run.sh", "jenkins"]
 
 EXPOSE 8080
